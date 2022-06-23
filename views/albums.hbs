@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        {{#each albums}}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                {{#if this.images.length}}
+                <img class="card-img-top" src="{{this.images.[0].url}}" alt="Picture of {{this.name}}">
+                {{/if}}
+                {{#unless this.images.length}}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Vinyl_disc_icon.svg/900px-Vinyl_disc_icon.svg.png"
+                    alt="Defualt album cover">
+                {{/unless}}
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <a href="/album-tracks/{{this.id}}" class="btn btn-primary">View Tracks</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
